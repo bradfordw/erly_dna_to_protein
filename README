@@ -1,0 +1,16 @@
+This is actually based on some code I saw a while ago, but can't seem to get my Google keywords straight to find it.
+
+Anyway, usage is as follows:
+
+ok = dna_translate:start_link().
+
+{ok, ProteinSeq} = dna_translate:transcribe(<<"YOUR CHUNK O' DNA">>).
+
+You get back a binary of the protein sequence.
+
+Some notes
+
+I'm curious if it would be faster on longer sequences by nabbing the codons in chunks of three instead of individually. The downside of course is the number of 
+functions with the varying patterns would get rather verbose.
+
+Adding streaming would be cool if you need to convert a ton of DNA.
